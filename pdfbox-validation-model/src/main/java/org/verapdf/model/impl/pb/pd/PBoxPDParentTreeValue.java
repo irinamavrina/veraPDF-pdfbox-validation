@@ -29,7 +29,6 @@ public class PBoxPDParentTreeValue implements COSObjectable {
 
     @Override
     public String toString() {
-        // return obj.toString();
-        return "~/'-'/~";
+        return obj.toString();
     }
 }
