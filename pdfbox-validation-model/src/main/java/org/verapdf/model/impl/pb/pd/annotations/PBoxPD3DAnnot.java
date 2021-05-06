@@ -53,7 +53,7 @@ public class PBoxPD3DAnnot extends PBoxPDAnnot implements PD3DAnnot {
 	public static final COSName key3D = COSName.getPDFName("3D");
 
 	public PBoxPD3DAnnot(PDAnnotation annot, PDResources pageResources, PDDocument document, PDFAFlavour flavour, PDPage pdPage) {
-		super(annot, pageResources, document, flavour, ANNOTATION_3D_TYPE,pdPage);
+		super(annot, pageResources, document, flavour, ANNOTATION_3D_TYPE, pdPage);
 	}
 
 	private List<PD3DStream> get3DStream() {

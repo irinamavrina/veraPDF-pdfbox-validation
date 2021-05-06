@@ -36,7 +36,7 @@ public class PBoxPDLinkAnnot extends PBoxPDAnnot implements PDLinkAnnot {
 	public static final String LINK_ANNOTATION_TYPE = "PDLinkAnnot";
 
 	public PBoxPDLinkAnnot(PDAnnotation annot, PDResources pageResources, PDDocument document, PDFAFlavour flavour, PDPage pdPage) {
-		super(annot, pageResources, document, flavour, LINK_ANNOTATION_TYPE,pdPage);
+		super(annot, pageResources, document, flavour, LINK_ANNOTATION_TYPE, pdPage);
 	}
 
 }

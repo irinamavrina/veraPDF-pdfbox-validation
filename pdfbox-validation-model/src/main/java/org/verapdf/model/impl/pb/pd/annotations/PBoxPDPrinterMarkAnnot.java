@@ -36,7 +36,7 @@ public class PBoxPDPrinterMarkAnnot extends PBoxPDAnnot implements PDPrinterMark
 	public static final String PRINTER_MARK_ANNOTATION_TYPE = "PDPrinterMarkAnnot";
 
 	public PBoxPDPrinterMarkAnnot(PDAnnotation annot, PDResources pageResources, PDDocument document, PDFAFlavour flavour, PDPage pdPage) {
-		super(annot, pageResources, document, flavour, PRINTER_MARK_ANNOTATION_TYPE,pdPage);
+		super(annot, pageResources, document, flavour, PRINTER_MARK_ANNOTATION_TYPE, pdPage);
 	}
 
 }

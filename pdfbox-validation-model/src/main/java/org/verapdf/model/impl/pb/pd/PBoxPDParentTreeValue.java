@@ -12,23 +12,23 @@ import org.apache.pdfbox.pdmodel.common.COSObjectable;
  * @author Tilman Hausherr
  */
 public class PBoxPDParentTreeValue implements COSObjectable {
-    COSObjectable obj;
+	COSObjectable obj;
 
-    public PBoxPDParentTreeValue(COSArray obj) {
-        this.obj = obj;
-    }
+	public PBoxPDParentTreeValue(COSArray obj) {
+		this.obj = obj;
+	}
 
-    public PBoxPDParentTreeValue(COSDictionary obj) {
-        this.obj = obj;
-    }
+	public PBoxPDParentTreeValue(COSDictionary obj) {
+		this.obj = obj;
+	}
 
-    @Override
-    public COSBase getCOSObject() {
-        return obj.getCOSObject();
-    }
+	@Override
+	public COSBase getCOSObject() {
+		return obj.getCOSObject();
+	}
 
-    @Override
-    public String toString() {
-        return obj.toString();
-    }
+	@Override
+	public String toString() {
+		return obj.toString();
+	}
 }

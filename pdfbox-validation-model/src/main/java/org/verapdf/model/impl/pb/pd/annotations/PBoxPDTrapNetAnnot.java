@@ -36,7 +36,7 @@ public class PBoxPDTrapNetAnnot extends PBoxPDAnnot implements PDTrapNetAnnot {
 	public static final String TRAP_NET_ANNOTATION_TYPE = "PDTrapNetAnnot";
 
 	public PBoxPDTrapNetAnnot(PDAnnotation annot, PDResources pageResources, PDDocument document, PDFAFlavour flavour, PDPage pdPage) {
-		super(annot, pageResources, document, flavour, TRAP_NET_ANNOTATION_TYPE,pdPage);
+		super(annot, pageResources, document, flavour, TRAP_NET_ANNOTATION_TYPE, pdPage);
 	}
 
 }

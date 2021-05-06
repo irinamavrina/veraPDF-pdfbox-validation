@@ -2,16 +2,16 @@
  * This file is part of veraPDF PDF Box PDF/A Validation Model Implementation, a module of the veraPDF project.
  * Copyright (c) 2015, veraPDF Consortium <info@verapdf.org>
  * All rights reserved.
- *
+ * <p>
  * veraPDF PDF Box PDF/A Validation Model Implementation is free software: you can redistribute it and/or modify
  * it under the terms of either:
- *
+ * <p>
  * The GNU General public license GPLv3+.
  * You should have received a copy of the GNU General Public License
  * along with veraPDF PDF Box PDF/A Validation Model Implementation as the LICENSE.GPL file in the root of the source
  * tree.  If not, see http://www.gnu.org/licenses/ or
  * https://www.gnu.org/licenses/gpl-3.0.en.html.
- *
+ * <p>
  * The Mozilla Public License MPLv2+.
  * You should have received a copy of the Mozilla Public License along with
  * veraPDF PDF Box PDF/A Validation Model Implementation as the LICENSE.MPL file in the root of the source tree.
@@ -145,7 +145,7 @@ public class PBoxPDPage extends PBoxPDObject implements PDPage {
 	public Boolean getcontainsAA() {
 		COSBase pageObject = this.simplePDObject.getCOSObject();
 		return pageObject != null && pageObject instanceof COSDictionary &&
-				((COSDictionary) pageObject).containsKey(COSName.AA);
+		       ((COSDictionary) pageObject).containsKey(COSName.AA);
 	}
 
 	@Override
@@ -177,7 +177,7 @@ public class PBoxPDPage extends PBoxPDObject implements PDPage {
 		if (this.outputIntents == null) {
 			this.outputIntents = parseOutputIntents();
 		}
-		return this.outputIntents != null ? ((PBoxOutputIntents)this.outputIntents).getColorSpace() : null;
+		return this.outputIntents != null ? ((PBoxOutputIntents) this.outputIntents).getColorSpace() : null;
 	}
 
 	private List<OutputIntents> getOutputIntents() {
@@ -197,11 +197,11 @@ public class PBoxPDPage extends PBoxPDObject implements PDPage {
 			return null;
 		}
 		List<PDOutputIntent> outInts = new ArrayList<>();
-		COSArray array = (COSArray) ((COSDictionary)this.simplePDObject.getCOSObject()).getDictionaryObject(COSName.OUTPUT_INTENTS);
+		COSArray array = (COSArray) ((COSDictionary) this.simplePDObject.getCOSObject()).getDictionaryObject(COSName.OUTPUT_INTENTS);
 		if (array != null) {
 			for (COSBase cosBase : array) {
 				if (cosBase instanceof COSObject) {
-					cosBase = ((COSObject)cosBase).getObject();
+					cosBase = ((COSObject) cosBase).getObject();
 				}
 				outInts.add(new PDOutputIntent((COSDictionary) cosBase));
 			}
@@ -305,19 +305,19 @@ public class PBoxPDPage extends PBoxPDObject implements PDPage {
 		} catch (IOException e) {
 			LOGGER.debug(
 					"Problems in obtaining pdfbox PDAnnotations. "
-							+ e.getMessage(), e);
+					+ e.getMessage(), e);
 		}
 		return Collections.emptyList();
 	}
 
 	private void addAllAnnotations(List<PDAnnot> annotations,
-								   List<PDAnnotation> pdfboxAnnotations) {
+	                               List<PDAnnotation> pdfboxAnnotations) {
 		PDResources pageResources = ((org.apache.pdfbox.pdmodel.PDPage)
 				this.simplePDObject).getResources();
 		for (PDAnnotation annotation : pdfboxAnnotations) {
 			if (annotation != null) {
 				PBoxPDAnnot annot = PBoxPDAnnot.createAnnot(annotation, pageResources, this.document, this.flavour,
-						(org.apache.pdfbox.pdmodel.PDPage) this.simplePDObject);
+				                                            (org.apache.pdfbox.pdmodel.PDPage) this.simplePDObject);
 				this.containsTransparency |= annot.isContainsTransparency();
 				annotations.add(annot);
 			}
